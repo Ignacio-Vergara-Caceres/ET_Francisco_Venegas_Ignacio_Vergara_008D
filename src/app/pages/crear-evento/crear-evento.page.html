@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button
+          defaultHref="/home"
+          text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Crear evento</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+ 
+   <form [formGroup]="eventoForm">
+      <ion-item>
+        <ion-input type="text" placeholder="Nombre del evento..." formControlName="nombre" label="Nombre del evento: " labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" formControlName="fecha" label="Fecha del evento: " labelPlacement="floating"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input type="text" placeholder="Lugar del evento.." formControlName="lugar" label="Lugar del evento:" labelPlacement="floating"></ion-input>
+      </ion-item>
+   
+      <ion-item>
+        <ion-input type="text" formControlName="descripcion" label="Descripcion del evento:" labelPlacement="floating"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-button expand="block" (click)="seleccionarImagen()">Seleccionar Imagen del evento (Opcional)</ion-button>
+      </ion-item>
+  
+      <ion-item *ngIf="imagenEvento">
+        <ion-img [src]="imagenEvento"></ion-img>
+      </ion-item>
+      
+      <div style="text-align: center; margin-top: 30px;">
+        <ion-button (click)="crearevento()" [disabled]="!eventoForm.valid" shape="round">
+          Crear Evento
+        </ion-button>
+      </div>
+      
+    </form>
+
+    <ion-content>
+      <ion-card>
+        <ion-img src="assets/imagen_appGestores.png" class="imagen"></ion-img>
+      </ion-card>
+    </ion-content>
+
+</ion-content>
+

@@ -1,0 +1,116 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modificar o eliminar evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">mod_el</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-accordion-group>
+    <ion-accordion value="uno">
+      <ion-item slot="header" color="light">
+        <ion-label>Seminario Escuela de informatica</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Seminario sobre ciberseguridad</div>
+
+      <div class="ion-padding" slot="content">Fecha y hora: Miercoles 11 de Septiembre, 16:30</div>
+
+      <div class="ion-padding" slot="content">Ubicacion: Sede DuocUC Maipu
+        <ion-button  expand="block" fill="clear" shape="round">
+          Modificar
+        </ion-button>
+        <ion-button  expand="block" fill="clear" shape="round">
+          Eliminar
+        </ion-button>
+      </div>
+      
+      
+    </ion-accordion>
+
+    <ion-accordion value="dos">
+      <ion-item slot="header" color="light">
+        <ion-label>Talleres Escuela de informatica</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Taller de Python</div>
+
+      <div class="ion-padding" slot="content">Fecha y hora: Viernes 13 de Septiembre, 14:20</div>
+
+      <div class="ion-padding" slot="content">Ubicacion: Sede DuocUC Maipu
+        <ion-button  expand="block" fill="clear" shape="round">
+          Modificar
+        </ion-button>
+        <ion-button  expand="block" fill="clear" shape="round">
+          Eliminar
+        </ion-button>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="tres">
+      <ion-item slot="header" color="light">
+        <ion-label>Seminarios Escuela de Telecomunicaciones</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Seminaio sobre Toubleshoothing</div>
+
+      <div class="ion-padding" slot="content">Fecha y hora: Viernes 13 de Octubre, 15:40</div>
+
+      <div class="ion-padding" slot="content">Ubicacion: Sede DuocUC Maipu
+        <ion-button  expand="block" fill="clear" shape="round">
+          Modificar
+        </ion-button>
+        <ion-button  expand="block" fill="clear" shape="round">
+          Eliminar
+        </ion-button>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="cuatro">
+      <ion-item slot="header" color="light">
+        <ion-label>Talleres Escuela de Telecomunicaciones</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Talle de Redes escalables y WAN</div>
+
+      <div class="ion-padding" slot="content">Fecha y hora: Miercoles 11 de Septiembre, 13:00</div>
+
+      <div class="ion-padding" slot="content">Ubicacion: Sede DuocUC Maipu
+        <ion-button  expand="block" fill="clear" shape="round">
+          Modificar
+        </ion-button>
+        <ion-button  expand="block" fill="clear" shape="round">
+          Eliminar
+        </ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="warning">
+    <ion-title>Duoc UC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

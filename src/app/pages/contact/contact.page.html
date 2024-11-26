@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingrese datos</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input label="Evento:" labelPlacement="floating" type="text" name="nom" [(ngModel)]="nom" placeholder="Nombre del evento.." ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-textarea label="Descripcion:" labelPlacement="floating" name="descripcion" [(ngModel)]="descripcion" placeholder="Descripcion del evento..."></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Fecha:" labelPlacement="floating" type="date" name="fecha" [(ngModel)]="fecha" placeholder="Fecha del evento..." ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="number" label="Hora:" labelPlacement="floating" name="hora" [(ngModel)]="hora" placeholder="Hora del evento..."></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="text" label="Ubicacion:" labelPlacement="floating" name="ubicacion" [(ngModel)]="ubicacion" placeholder="Ubicacion del evento"></ion-input>
+        </ion-item>
+      </ion-list>      
+    </ion-card-content>
+    
+    <div id="centrar">
+      <ion-button (click)="mensaje()" fill="solid" shape="round" id="boton">
+        Crear evento
+      </ion-button>
+    </div>
+   
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="warning">
+    <ion-title>Duoc UC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

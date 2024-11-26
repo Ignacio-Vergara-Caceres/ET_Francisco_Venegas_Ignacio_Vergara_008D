@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+      <ion-img src="assets/logo_duoc.png" class="imagen"></ion-img>
+  </ion-card>
+
+  <div class="centrar-boton">
+    <ion-button (click)="mensajeIni()" fill="solid" shape="round">
+      Iniciar Sesión
+    </ion-button>
+
+    <ion-button (click)="mensajeReg()" fill="solid" shape="round">
+      Registrar Usuario
+    </ion-button>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="warning">
+    <ion-title>Duoc UC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

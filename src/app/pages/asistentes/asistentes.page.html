@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Asistentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Campo de entrada para el filtro -->
+  <ion-item>
+    <ion-label position="floating">Filtrar por ID del evento</ion-label>
+    <ion-input [(ngModel)]="filtroEventoId" type="text" placeholder="Ingrese ID del evento"></ion-input>
+  </ion-item>
+
+  <!-- Lista filtrada -->
+  <ion-list>
+    <ion-item *ngFor="let a of asistentesFiltrados()">
+      <ion-label>
+        <h2>Rut: {{ a.rut }}</h2>
+        <h2>Nombre evento: {{ a.nombre }}</h2>
+        <h2>ID evento: {{ a.id_evento }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

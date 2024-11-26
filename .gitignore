@@ -1,0 +1,13 @@
+# Node modules
+/node_modules/
+
+# Angular cache
+.angular/
+
+# Otros archivos temporales
+.env
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log

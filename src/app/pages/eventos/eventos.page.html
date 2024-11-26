@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let e of eventos">
+      <ion-label>
+        <h3 style="text-align: right;">Id evento: {{e.id}}</h3>
+        <h2>Nombre evento: {{e.nombre}}</h2>
+        <h2>Fecha del evento: {{e.fecha}}</h2>
+        <h2>Lugar del evento: {{e.lugar}}</h2>
+        <h2>Descripcion del evento: {{e.descripcion}}</h2>
+      </ion-label>
+      <ion-button (click)="borrarEvento(e)" expand="block" fill="clear" shape="round">
+        Eliminar evento
+      </ion-button>
+
+      <ion-button (click)="modificarEvento(e)" expand="block" fill="clear" shape="round">
+        Modificar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="warning">
+    <ion-title>Duoc UC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

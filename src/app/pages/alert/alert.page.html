@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        text=""
+        color="dark">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Inicio de Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<form [formGroup]="loginForm">
+  <ion-item>
+    <ion-input type="text" placeholder="ingrese username" label="Usuario" labelplacement="floating" formControlName="username">
+    </ion-input>
+  </ion-item>
+
+    <div id="alerta" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty ||
+               loginForm.get('username')?.touched)">
+      <div id="alerta" *ngIf="loginForm.get('username')?.hasError('required')">
+         *Username es obligatorio
+      </div>
+      <div id="alerta" *ngIf="loginForm.get('username')?.hasError('minlength')">
+        *Username debe tener minimo 6 caracteres
+      </div>
+    </div>
+
+  <ion-item>
+    <ion-input type="Password" placeholder="ingrese password" label="Password" labelplacement="floating" formControlName="password">
+    </ion-input>
+  </ion-item>
+
+    <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||
+                loginForm.get('password')?.touched)">
+      <div id="alerta" *ngIf="loginForm.get('password')?.hasError('required')">
+          *Password es obligatorio
+      </div>
+      <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+          *Password debe tener minimo 8 caracteres
+      </div>
+    </div>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="login()" [disabled]="!loginForm.valid" shape="round" color="primary">
+        Login
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</form>
+
+<ion-footer>
+  <ion-toolbar color="warning">
+    <ion-title>Duoc UC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

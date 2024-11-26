@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Modificar evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Evento</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Datos del evento</ion-card-title>
+      <ion-card-subtitle>Nombre de evento: {{evento.nombre}}</ion-card-subtitle>
+      <ion-card-subtitle>Lugar del evento: {{evento.lugar}}</ion-card-subtitle>
+      <ion-card-subtitle>Fecha del evento: {{evento.fecha}}</ion-card-subtitle>
+      <ion-card-subtitle>Descripcion: {{evento.descripcion}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item *ngIf="imagenEvento">
+      <ion-img [src]="imagenEvento"></ion-img>
+    </ion-item>
+  </ion-card>
+
+  <form [formGroup]="modificarEventoForm">
+    <ion-item>
+      <ion-input type="text" placeholder="{{evento.nombre}}" formControlName="nombre" label="Nombre del evento: " labelPlacement="floating" ></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input type="text" formControlName="lugar" label="Lugar del evento: " labelPlacement="floating" placeholder="{{evento.lugar}}"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input type="text" formControlName="fecha" label="Fecha del evento: " labelPlacement="floating" placeholder="{{evento.fecha}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" formControlName="descripcion" label="Descripcion del evento: " labelPlacement="floating" placeholder="{{evento.descripcion}}"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="imagenEvento">
+      <ion-img [src]="imagenEvento"></ion-img>
+    </ion-item>
+  </form>
+
+  <ion-button (click)="ModificarEvento()" expand="block" fill="solid" shape="round">
+    Modificar evento
+  </ion-button>
+
+</ion-content>
