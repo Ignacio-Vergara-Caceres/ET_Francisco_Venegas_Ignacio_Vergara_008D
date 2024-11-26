@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¡Datos Usuario!</ion-card-title>
+      <ion-card-subtitle>Nombre de usuario: {{usuario.username}}</ion-card-subtitle>
+      <ion-card-subtitle>Correo: {{usuario.email}}</ion-card-subtitle>
+      <ion-card-subtitle>Rut: {{usuario.rut}}</ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-item *ngIf="imagenPerfil">
+      <ion-img [src]="imagenPerfil"></ion-img>
+    </ion-item>
+
+  </ion-card>
+
+  <form [formGroup]="modificarForm">
+    <ion-item>
+      <ion-input type="text" placeholder="{{usuario.username}}" formControlName="username" label="Username: " labelPlacement="floating" ></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input type="email" formControlName="email" label="Email: " labelPlacement="floating"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input type="password" formControlName="password" label="Password: " labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button expand="block" (click)="seleccionarImagen()">Seleccionar nueva imagen de perfil (Opcional)</ion-button>
+    </ion-item>
+
+    <ion-item *ngIf="imagenPerfil">
+      <ion-img [src]="imagenPerfil"></ion-img>
+    </ion-item>
+
+  </form>
+
+  <ion-button (click)="EditarPerfil()" expand="block" fill="solid" shape="round">
+    Editar perfil
+  </ion-button>
+
+</ion-content>

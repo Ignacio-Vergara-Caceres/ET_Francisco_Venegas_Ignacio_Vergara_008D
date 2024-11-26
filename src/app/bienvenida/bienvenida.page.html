@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Bienvenid&#64;</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-img src="assets/imagen_appAsistentes.png" class="imagen"></ion-img>
+  </ion-card>
+
+  <div class="centrar-boton">
+  <ion-button (click)="redirigir_login()" fill="solid" shape="round">
+    Iniciar Sesión
+  </ion-button>
+
+  <ion-button (click)="redirigir_register()" fill="solid" shape="round">
+    Registrar Usuario
+  </ion-button>
+</div>
+</ion-content>

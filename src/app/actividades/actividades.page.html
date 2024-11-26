@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/inicio"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Actividades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let e of eventos">
+      <ion-label>
+        <h2>Nombre: {{e.nombre}}</h2>
+        <h3>Fecha: {{e.fecha}}</h3>
+        <h3>Lugar: {{e.lugar}}</h3>
+        <h3>Descripcion: {{e.descripcion}}</h3>
+        <div style="text-align: center; padding-top: 5px;">
+          <img [src]="e.imagenEvento">
+        </div>
+        <ion-button (click)="comentario(e)" expand="block" shape="round">
+          Quieres dejar un comentario
+        </ion-button>
+
+        <ion-button (click)="asistir(e)" expand="block" shape="round">
+          Quieres paticipar?
+        </ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="warning">
+    <ion-title>Duoc UC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

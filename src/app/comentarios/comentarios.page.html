@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/inicio"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Deja tu comentarios u opinion!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Comentarios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Comentario o reseña</ion-label>
+      <ion-input type="text" name="txtComentario" [(ngModel)]="newComentario.comentario" placeholder="..."></ion-input>
+    </ion-item>
+  
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="dejarComentario()" expand="block" color="success" shape="round">
+          Dejar comentario!
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

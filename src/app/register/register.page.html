@@ -1,0 +1,106 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button
+          defaultHref="/bienvenida"
+          text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Crear Usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+ 
+   <form [formGroup]="registroForm">
+      <ion-item>
+        <ion-input type="text" placeholder="Nombre usado para identificarse" formControlName="username" label="Username:" labelPlacement="floating"></ion-input>
+      </ion-item>
+  
+        <div id="alerta" *ngIf="registroForm.get('username')?.invalid && (registroForm.get('username')?.dirty || 
+                    registroForm.get('username')?.touched)">
+            <div id="alerta" *ngIf="registroForm.get('username')?.hasError('required')">
+              *Username es obligatorio
+            </div>
+            <div id="alerta" *ngIf="registroForm.get('username')?.hasError('minlength')">
+              *Username debe tener mínimo 6 caracteres
+            </div>
+        </div>
+  
+      <ion-item>
+        <ion-input type="email" formControlName="email" label="Email:" labelPlacement="floating"></ion-input>
+      </ion-item>
+  
+        <div id="alerta" *ngIf="registroForm.get('email')?.invalid && (registroForm.get('email')?.dirty || 
+                    registroForm.get('email')?.touched)">
+            <div id="alerta" *ngIf="registroForm.get('email')?.hasError('required')">
+              *Email es obligatorio
+            </div>
+            <div id="alerta" *ngIf="registroForm.get('email')?.hasError('email')">
+              *Formato no válido
+            </div>
+        </div>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Rut sin puntos ni guión. Se permite K" formControlName="rut" label="Rut (con digito verificador):" labelPlacement="floating"></ion-input>
+      </ion-item>
+    
+        <div id="alerta" *ngIf="registroForm.get('rut')?.invalid && (registroForm.get('rut')?.dirty || 
+                    registroForm.get('rut')?.touched)">
+            <div id="alerta" *ngIf="registroForm.get('rut')?.hasError('required')">
+              *Rut es obligatorio
+            </div>
+            <div id="alerta" *ngIf="registroForm.get('rut')?.hasError('minlength')">
+              *Rut debe tener mínimo 9 caracteres
+            </div>
+            <div id="alerta" *ngIf="registroForm.get('rut')?.hasError('maxlength')">
+              *Rut debe tener máximo 9 caracteres
+            </div>
+            <div id="alerta" *ngIf="registroForm.get('rut')?.hasError('pattern')">
+              *Rut debe tener solo números, sin puntos ni guión
+            </div>
+        </div>  
+  
+      <ion-item>
+        <ion-input type="password" formControlName="password" label="Password:" labelPlacement="floating"></ion-input>
+      </ion-item>
+  
+        <div id="alerta" *ngIf="registroForm.get('password')?.invalid && (registroForm.get('password')?.dirty || 
+                    registroForm.get('password')?.touched)">
+            <div id="alerta" *ngIf="registroForm.get('password')?.hasError('required')">
+              *Password es obligatorio
+            </div>
+            <div id="alerta" *ngIf="registroForm.get('password')?.hasError('pattern')">
+              *Password debe tener mínimo 8 caracteres, una letra y un número
+            </div>
+        </div>
+
+      <ion-item>
+        <ion-button expand="block" (click)="seleccionarImagen()">Seleccionar Imagen de perfil (Opcional)</ion-button>
+      </ion-item>
+  
+      <ion-item *ngIf="imagenPerfil">
+        <ion-img [src]="imagenPerfil"></ion-img>
+      </ion-item>
+      
+      <div style="text-align: center; margin-top: 30px;">
+        <ion-button (click)="crearUsuario()" [disabled]="!registroForm.valid" shape="round">
+          Crear Usuario
+        </ion-button>
+      </div>
+      
+    </form>
+
+    <ion-content>
+      <ion-card>
+        <ion-img src="assets/imagen_appAsistentes.png" class="imagen"></ion-img>
+      </ion-card>
+    </ion-content>
+
+</ion-content>
